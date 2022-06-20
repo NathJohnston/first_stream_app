@@ -29,8 +29,8 @@ streamlit.dataframe(fruits_to_show)
 
 #New Section to display furuityvice api response
 streamlit.header('Fruityvice Truit Advice!')
-#fruit_choice = streamlit.text_input("What fruit would you like information about?, 'kiwi')
-#streamlit.write('The user entered', fruit_choice)
+fruit_choice = streamlit.text_input('What fruit would you like information about?', 'kiwi')
+streamlit.write('The user entered', fruit_choice)
 
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
