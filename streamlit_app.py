@@ -33,9 +33,9 @@ streamlit.header('Fruityvice Truit Advice!')
 #streamlit.write('The user entered', fruit_choice)
 
 import requests
-#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-#streamlit.text(fruityvice_response.json()) #just writes the data on the screen                                    
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response.json()) #just writes the data on the screen                                    
+#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + "kiwi")
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)                                    
 
 
