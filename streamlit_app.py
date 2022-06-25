@@ -4,7 +4,7 @@ import pandas
 import requests
 import snowflake.connector
 #use this for Control of Flow changes - error message handling
-from urllib.error inport URLERROR
+from urllib.error import URLERROR
 
 streamlit.title('My Parents New Healthy Diner')
 
