@@ -71,3 +71,8 @@ streamlit.dataframe(my_data_rows)
 # Add a second textbox
 add_my_fruit= streamlit.text_input('What fruit would you like to add?', 'jackfruit')
 streamlit.write('Thanks for adding', add_my_fruit)
+
+
+# Adding data to the Snowflake table
+# This code will not work correctlt
+my_cursor.execute("INSERT INTO fruit_load_list VALUES ('from steamlit')")
