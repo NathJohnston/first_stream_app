@@ -66,4 +66,4 @@ streamlit.header("The fruit load list contains:")
 # single row of data in a dataframe
 # streamlit.dataframe(my_data_row)
 
-streamlit.dataframe(my_data-rows)
+streamlit.dataframe(my_data_rows)
