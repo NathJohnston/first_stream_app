@@ -75,4 +75,4 @@ streamlit.write('Thanks for adding', add_my_fruit)
 
 # Adding data to the Snowflake table
 # This code will not work correctlt
-my_cursor.execute("INSERT INTO fruit_load_list VALUES ('from steamlit')")
+my_cur.execute("INSERT INTO fruit_load_list VALUES ('from steamlit')")
