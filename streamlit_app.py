@@ -61,27 +61,22 @@ streamlit.write('The user entered', fruit_choice)
 streamlit.stop()
 
 
-
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-# my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_cur.execute("SELECT * FROM fruit_load_list")
-
-# Fetch first row of data from the cursor
-# my_data_row = my_cur.fetchone()
-
-# Fetech all the rows of data in the cursor
-my_data_rows = my_cur.fetchall()
-
+# Move the Fruit Load List Query and Load into a Button Action
 # streamlit.text("Hello from Snowflake:")
 # streamlit.text("The fruit load list contains:")
 streamlit.header("The fruit load list contains:")
 
-# streamlit.text(my_data_row)
-# single row of data in a dataframe
-# streamlit.dataframe(my_data_row)
+#Snowflake-related functions
+def get_fruit_load_list():
+   with my_cnx.cursor() as my_cur:
+      my_cur.execute("SELECT * FROM fruit_load_list")
+      return my_cur.fetchall()
 
-streamlit.dataframe(my_data_rows)
+# Add a button to load the fruit
+if streamlit.button('Get Fruit Load List'):
+   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+   my_data_rows = get_fruit_list()
+   streamlit.dataframe(my_data_rows)
 
 # Add a second textbox
 add_my_fruit= streamlit.text_input('What fruit would you like to add?', 'jackfruit')
